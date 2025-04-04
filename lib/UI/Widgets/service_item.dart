@@ -1,6 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/Utils/Decorations/colors.dart';
-import 'package:portfolio/Utils/Decorations/text_styles.dart';
 
 class ServiceItem extends StatelessWidget {
   const ServiceItem({
@@ -15,30 +15,32 @@ class ServiceItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // height: MediaQuery.of(context).size.height * 0.6,
       padding: EdgeInsets.all(8),
       // width: MediaQuery.of(context).size.width * 0.2,
       // height: MediaQuery.of(context).size.height * 0.3,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: AppColors.lightGrayBlue,
+        color: Colors.white,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(fit: BoxFit.fill, img, width: 50, height: 50),
-          Text(
+          Image.asset(fit: BoxFit.cover, img, width: double.infinity),
+          AutoSizeText(
             title,
             style: TextStyle(
               color: AppColors.mediumBlue,
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
               overflow: TextOverflow.ellipsis,
             ),
             textAlign: TextAlign.center,
-            maxLines: 2,
+            maxLines: 3,
+            minFontSize: 14,
           ),
-          Text(
+          AutoSizeText(
             description,
             style: TextStyle(
               color: AppColors.darkBlueGray,
@@ -47,7 +49,8 @@ class ServiceItem extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             textAlign: TextAlign.center,
-            maxLines: 3,
+            maxLines: 5,
+            minFontSize: 10,
           ),
         ],
       ),

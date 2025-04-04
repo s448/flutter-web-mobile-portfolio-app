@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/Bloc/app_bloc.dart';
 import 'package:portfolio/Bloc/app_state.dart';
+import 'package:portfolio/UI/Pages/LandingPageSectors/about_me.dart';
 import 'package:portfolio/UI/Pages/LandingPageSectors/home_page.dart';
 import 'package:portfolio/UI/Pages/LandingPageSectors/services_page.dart';
 import 'package:portfolio/UI/Widgets/footer_tab.dart';
@@ -51,7 +52,14 @@ class _LandingPageState extends State<LandingPage> {
               centerTitle: true,
             ),
             body: SingleChildScrollView(
-              child: Column(children: [HomePage(), ServicesPage()]),
+              child: Column(
+                children: [
+                  HomePage(),
+                  ServicesPage(),
+                  const SizedBox(height: 50),
+                  AboutMe(),
+                ],
+              ),
             ),
             // state is NavigationHashUpdated
             //     ? Center(child: Text(state.hash.toString()))

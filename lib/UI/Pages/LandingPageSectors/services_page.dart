@@ -3,6 +3,7 @@ import 'package:portfolio/UI/Widgets/service_item.dart';
 import 'package:portfolio/Utils/Decorations/colors.dart';
 import 'package:portfolio/Utils/Decorations/text_styles.dart';
 import 'package:portfolio/Utils/Enum/services.dart';
+import 'package:portfolio/Utils/platform_utils.dart';
 
 class ServicesPage extends StatelessWidget {
   const ServicesPage({super.key});
@@ -62,15 +63,15 @@ class ServicesPage extends StatelessWidget {
                   crossAxisCount: crossAxisCount,
                   mainAxisSpacing: 30,
                   crossAxisSpacing: 25,
-                  childAspectRatio: 1,
+                  childAspectRatio:
+                      PlatformUtils.isWebOnDesktop(context) ? 0.68 : 0.6,
                 ),
                 padding: const EdgeInsets.all(16),
                 itemCount: servicesJson.length,
                 itemBuilder: (context, index) {
                   var serviceData = servicesJson[index];
-
                   return ServiceItem(
-                    img: 'assets/ic/about.png',
+                    img: serviceData['img'],
                     title: serviceData['title']!,
                     description: serviceData['description']!,
                   );
