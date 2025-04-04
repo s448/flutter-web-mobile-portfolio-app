@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.7,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             child: Column(

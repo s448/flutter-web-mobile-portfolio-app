@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/Bloc/app_bloc.dart';
-import 'package:portfolio/Bloc/app_event.dart';
 import 'package:portfolio/Bloc/app_state.dart';
 import 'package:portfolio/UI/Pages/LandingPageSectors/home_page.dart';
+import 'package:portfolio/UI/Pages/LandingPageSectors/services_page.dart';
 import 'package:portfolio/UI/Widgets/footer_tab.dart';
 import 'package:portfolio/UI/Widgets/lets_conatct_button.dart';
 import 'package:portfolio/Utils/Decorations/colors.dart';
-import 'package:portfolio/Utils/Decorations/text_styles.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -51,7 +50,9 @@ class _LandingPageState extends State<LandingPage> {
               ),
               centerTitle: true,
             ),
-            body: HomePage(),
+            body: SingleChildScrollView(
+              child: Column(children: [HomePage(), ServicesPage()]),
+            ),
             // state is NavigationHashUpdated
             //     ? Center(child: Text(state.hash.toString()))
             //     : Center(child: Text("data")),
